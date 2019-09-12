@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+        android:layout_gravity="center"
+        android:layout_width="260sp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fragment_filter_background"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RadioGroup
+            android:layoutDirection="rtl"
+            >
+        <TextView
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:textSize="24sp"
+                android:text="@string/location_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <CheckBox
+                android:id="@+id/checkboxL_north"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/north"
+                android:checked="true"
+        />
+
+        <CheckBox
+                android:id="@+id/checkboxL_haifa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/haifa"
+                android:checked="true"
+        />
+
+        <CheckBox
+                android:id="@+id/checkboxL_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/center"
+                android:checked="true"
+        />
+
+        <CheckBox
+                android:id="@+id/checkboxL_tlv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/tlv"
+                android:checked="true"
+        />
+
+        <CheckBox
+                android:id="@+id/checkboxL_jero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/jerusalem"
+                android:checked="true"
+        />
+
+        <CheckBox
+                android:id="@+id/checkboxL_south"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/south"
+        />
+    </RadioGroup>
+    <RadioGroup
+            android:layoutDirection="rtl"
+            >
+        <TextView
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:textSize="24sp"
+                android:text="@string/heb_ages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <CheckBox
+                android:id="@+id/checkboxA_1_6M"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/animal_filter_ag_1"
+                android:checked="true"
+        />
+        <CheckBox
+                android:id="@+id/checkboxA_6M_2Y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/animal_filter_age_2"
+                android:checked="true"
+        />
+        <CheckBox
+                android:id="@+id/checkboxA_2Y_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/animal_filter_age_3"
+                android:checked="true"
+        />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/frag_btn_filter"
+        android:background="@drawable/btn_round_corners_pink"
+        android:text="@string/filter"
+        android:textSize="20sp"
+        android:layout_marginBottom="2sp"
+    />
+
+</TableLayout>
