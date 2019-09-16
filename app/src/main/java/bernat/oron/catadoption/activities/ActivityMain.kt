@@ -265,7 +265,7 @@ class ActivityMain : AppCompatActivity(), View.OnClickListener, RegistrationInte
             this
         )
         adapter.onItemClick = { item ->
-            //send the item to next view page
+            //send the item to arrow_right view page
             val i = Intent(this, ActivityAnimalPage::class.java)
             i.putExtra("animal", item)
             startActivity(i)

@@ -3,6 +3,7 @@ package bernat.oron.catadoption.activities
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import bernat.oron.catadoption.R
 import bernat.oron.catadoption.model.Animal
@@ -38,10 +39,12 @@ class ActivitySplash :AppCompatActivity(){
     }
 
     val ref = FirebaseDatabase.getInstance()
+    lateinit var textV : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+        textV = findViewById(R.id.textView2)
         initTypes()
         init()
     }
@@ -57,6 +60,7 @@ class ActivitySplash :AppCompatActivity(){
             }
             override fun onCancelled(p0: DatabaseError) {
                 Log.e("Db error", p0.message)
+                connectionFailed(p0.message)
             }
 
         })
@@ -106,6 +110,7 @@ class ActivitySplash :AppCompatActivity(){
             }
             override fun onCancelled(p0: DatabaseError) {
                 Log.e("SingleValueEvent E", p0.message)
+                connectionFailed(p0.message)
             }
 
         })
@@ -113,6 +118,12 @@ class ActivitySplash :AppCompatActivity(){
             uid = FirebaseAuth.getInstance().currentUser!!.uid
             initFavoriteAndUploads()
         }
+    }
+
+    private fun connectionFailed(message: String){
+        textV.setBackgroundColor(resources.getColor(R.color.colorTextDel))
+        textV.textSize = 18F
+        textV.text = message
     }
 
     private fun initFavoriteAndUploads(){
@@ -137,6 +148,7 @@ class ActivitySplash :AppCompatActivity(){
 
             override fun onCancelled(p0: DatabaseError) {
                 Log.e("SingleValueEvent E", p0.message)
+                connectionFailed(p0.message)
             }
         })
     }

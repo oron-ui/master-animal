@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ImageView
-            android:id="@+id/image_full"
-
-            android:layout_width="match_parent"
+    <ImageButton
+            android:id="@+id/btn_right"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:src="@mipmap/app_logo"
             android:background="@android:color/transparent"
+            android:layout_alignEnd="@+id/image_full"
+            android:src="@mipmap/arrow_right"
+            android:foregroundGravity="center"
             />
 
-</LinearLayout>
+    <ImageView
+            android:id="@+id/image_full"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/app_logo" />
+
+    <ImageButton
+            android:id="@+id/btn_left"
+
+            android:foregroundGravity="center"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:layout_alignStart="@+id/image_full"
+            android:src="@mipmap/arrow_left"
+
+            />
+</RelativeLayout>

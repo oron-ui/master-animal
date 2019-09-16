@@ -11,7 +11,7 @@ import bernat.oron.catadoption.R
 
 class FragmentImageFullScreen : Fragment(){
 
-    lateinit var draws : Array<Drawable>
+    var images = ArrayList<Drawable>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? = inflater.inflate(R.layout.fragment_image_full_screen, container, false)
@@ -19,7 +19,10 @@ class FragmentImageFullScreen : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val img = view.findViewById<ImageView>(R.id.image_full)
-        img.setImageDrawable(draws.random())
+        img.setImageDrawable(images.random())
+        val btnRight = view.findViewById<ImageView>(R.id.btn_right)
+        val btnLeft = view.findViewById<ImageView>(R.id.btn_left)
+
 
     }
 }

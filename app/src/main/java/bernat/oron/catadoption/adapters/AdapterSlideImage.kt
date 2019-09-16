@@ -29,9 +29,6 @@ class AdapterSlideImage(val context: Context, val imageModelArrayList: ArrayList
     override fun instantiateItem(view: ViewGroup, position: Int): Any {
         val imageLayout = inflater?.inflate(R.layout.activity_animal_page_sliding_images, view, false)!!
         val imageView = imageLayout.findViewById(R.id.image) as ImageView
-        imageLayout.setOnClickListener {
-            //todo: open image in new windows
-        }
         val stringImage: String? = imageModelArrayList[position]
         val storageReference = FirebaseStorage.getInstance()
         if (stringImage != null) {
@@ -42,11 +39,10 @@ class AdapterSlideImage(val context: Context, val imageModelArrayList: ArrayList
                 Glide.with(context.applicationContext)
                     .load(it)
                     .into(imageView)
-
-//                    imageView.setOnClickListener {
-//                        onItemClick?.invoke(imageView.drawable)
-//                    }
                 view.addView(imageLayout, 0)
+                    imageLayout.setOnClickListener {
+                        onItemClick?.invoke(imageView.drawable)
+                    }
             }.addOnFailureListener {
                 Log.e("images from DB","failed to fetch")
             }

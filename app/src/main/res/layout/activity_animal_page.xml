@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
+        android:id="@+id/scroll_view_top"
         android:layoutDirection="rtl"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
@@ -13,17 +14,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+        <ImageView
+                android:id="@+id/image_full_screen"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
 
         <RelativeLayout
-                android:id="@+id/top_container"
+                android:id="@+id/image_container"
                 android:layout_width="match_parent"
-                android:layout_height="300sp" >
+                android:layout_height="300sp"
+                >
 
             <androidx.viewpager.widget.ViewPager
                     android:id="@+id/pager"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"/>
+                    android:layout_alignParentTop="true">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                    <TextView
+
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/weight"
+                            android:textSize="16sp" />
+
+                    <TextView
+                            android:id="@+id/animal_txt_page_weight"
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                </LinearLayout>
+            </androidx.viewpager.widget.ViewPager>
 
             <com.viewpagerindicator.CirclePageIndicator
                     android:id="@+id/indicator"
@@ -42,7 +77,7 @@
 
         <LinearLayout
                 android:background="@color/colorPrimaryLight"
-                android:layout_below="@+id/top_container"
+                android:layout_below="@+id/image_full_screen"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -145,33 +180,7 @@
 
 
             </LinearLayout>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="12dp"
-            >
-                <TextView
 
-                        android:gravity="center"
-                        android:textSize="16sp"
-                        android:text="@string/weight"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:layout_width="0sp"
-                        />
-
-                <TextView
-                        android:id="@+id/animal_txt_page_weight"
-                        android:textAlignment="center"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:layout_width="0sp"
-                />
-
-            </LinearLayout>
             <TextView
                     android:textAlignment="center"
 
